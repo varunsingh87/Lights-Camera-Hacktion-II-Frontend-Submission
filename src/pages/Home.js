@@ -21,7 +21,6 @@ const Home = () => {
             <Movies />
           </Tab>
           <Tab tabKey={2} tabName='Watch List'>
-
           </Tab>
           <Tab tabKey={3} tabName='Create a Movie'>
 
