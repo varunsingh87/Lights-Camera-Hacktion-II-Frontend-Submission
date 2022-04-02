@@ -117,8 +117,13 @@ const Home = () => {
                 })}
             </div>
           </Tab>
-          <Tab tabKey={2} tabName={"Series"} isDisabled={true}></Tab>
-          <Tab tabKey={3} tabName={"MyList"}>
+          <Tab tabKey={2} tabName={"Create a Move"}>
+
+          </Tab>
+          <Tab tabKey={3} tabName={"Movie Fan Art"}>
+            
+          </Tab>
+          <Tab tabKey={4} tabName={"Watch List"}>
             <div className="ownListContent">
               <div className="title">Your Library</div>
               {myMovies && isAuthenticated ? (
