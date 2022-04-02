@@ -22,7 +22,7 @@ const Player = () => {
               size={60}
               svg="arrowCircleLeft"
             /> */}
-          {/* </Link>
+          </Link>
         </div>
     </div>
   </>

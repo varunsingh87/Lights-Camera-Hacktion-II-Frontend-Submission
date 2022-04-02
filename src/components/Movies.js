@@ -1,7 +1,7 @@
-import { movies } from "../helpers/library"
-import { Button, Modal } from 'web3uikit'
 import { useState } from 'react'
-import {Link, useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { Button, Modal } from 'web3uikit'
+import { movies } from "../helpers/library"
 import '../pages/Home.css'
 
 export default function Movies() {
@@ -15,10 +15,12 @@ export default function Movies() {
         <div className='scene'>
             <img
                 src={movies[0].Scene}
+                alt="Scene"
                 className='sceneImg'
             />
             <img
                 className='sceneLogo'
+                alt="Scene logo"
                 src={movies[0].Logo}
             />
             <p
@@ -51,6 +53,7 @@ export default function Movies() {
                     <img
                         key={e.Thumnbnail}
                         src={e.Thumnbnail}
+                        alt="Thumbnail"
                         className='thumbnail'
                         onClick={() => {
                             setSelectedFilm(e)
@@ -72,8 +75,8 @@ export default function Movies() {
                     width='1000px'
                 >
                     <div className='modalContent'>
-                        <img src={selectedFilm.Scene} className='modalImg' />
-                            <img className='modalLogo' src={selectedFilm.Logo} />
+                        <img src={selectedFilm.Scene} alt="" className='modalImg' />
+                            <img className='modalLogo' alt="" src={selectedFilm.Logo} />
                             <div className='modalPlayButton'>
                                 <Button
                                     icon='chevronRightX2'

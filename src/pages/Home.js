@@ -1,12 +1,12 @@
 import React from 'react';
-import {Logo} from '../images/Netflix'
-import {ConnectButton, Icon, TabList, Tab} from 'web3uikit'
+import { Logo } from '../images/Netflix'
+import { ConnectButton, Icon, TabList, Tab } from 'web3uikit'
 import Movies from '../components/Movies';
 import './Home.css'
 
 const Home = () => {
 
-  return(
+  return (
     <>
       <div className='logo'>
         <Logo />
@@ -21,16 +21,16 @@ const Home = () => {
             <Movies />
           </Tab>
           <Tab tabKey={2} tabName='Watch List'>
-            
+
           </Tab>
           <Tab tabKey={3} tabName='Create a Movie'>
-            
+
           </Tab>
           <Tab tabKey={4} tabName='Find a movie'>
-            
+
           </Tab>
           <Tab tabKey={5} tabName='Fan Art'>
-            
+
           </Tab>
         </TabList>
       </div>
