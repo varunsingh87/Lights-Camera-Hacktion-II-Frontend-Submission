@@ -20,7 +20,7 @@
 }
 
 .connect {
-  position: fixed;
+  position: absolute;
   right:0;
   padding: 15px;
   z-index: 3;
