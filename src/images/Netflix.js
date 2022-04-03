@@ -1,5 +1,5 @@
 export const Logo = () => (
-<div style={{width: '130px', height: '28px'}}>
-  TheaterCrunch
-</div>
+  <div style={{ width: '150px', height: '28px', color: 'white' }}>
+    TheaterCrunch
+  </div>
 )
