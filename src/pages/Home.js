@@ -79,8 +79,8 @@ const Home = () => {
         <TabList defaultActiveKey={1} tabStyle="bar">
           <Tab tabKey={1} tabName={"Movies"}>
             <div className="scene">
-              <img src={movies[0].Scene} className="sceneImg"></img>
-              <img className="sceneLogo" src={movies[0].Logo}></img>
+              <img src={movies[0].Scene} alt="" className="sceneImg" />
+              <img className="sceneLogo" alt="" src={movies[0].Logo} />
               <p className="sceneDesc">{movies[0].Description}</p>
               <div className="playButton">
                 <Button
@@ -118,7 +118,7 @@ const Home = () => {
                 })}
             </div>
           </Tab>
-          <Tab tabKey={2} tabName={"Create a Move"}></Tab>
+          <Tab tabKey={2} tabName={"Create a Movie"}></Tab>
           <Tab tabKey={3} tabName={"Movie Fan Art"}></Tab>
           <Tab tabKey={4} tabName={"Watch List"}>
             <div className="ownListContent">
@@ -151,10 +151,10 @@ const Home = () => {
         {selectedFilm && (
           <div className="modal">
             <Modal
-              onCloseButtonPressed={() => setVisible(false)}
-              isVisible={visible}
               hasFooter={false}
+              title={selectedFilm.Name}
               width="1000px"
+              headerHasBottomBorder="true"
             >
               <div className="modalContent">
                 <img src={selectedFilm.Scene} className="modalImg"></img>
