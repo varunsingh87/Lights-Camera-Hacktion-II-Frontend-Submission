@@ -153,6 +153,8 @@ const Home = () => {
             <Modal
               hasFooter={false}
               title={selectedFilm.Name}
+              isVisible={visible}
+              onCloseButtonPressed={() => {setSelectedFilm(); setVisible(false)}}
               width="1000px"
               headerHasBottomBorder="true"
             >
