@@ -23,10 +23,10 @@ const Home = () => {
 
   useEffect(() => {
     async function fetchMyList() {
-      //  await Moralis.start({
-      //     serverUrl: "https://nxnum9lbbe37.usemoralis.com:2053/server",
-      //     appId: "pI4URxOPkpA9Ob4PuMQS88zBgyISVIVFot9qXxYQ",
-      //   }); //if getting errors add this 
+      await Moralis.start({
+        serverUrl: "https://soxcc33tokmi.usemoralis.com:2053/server",
+        appId: "Vx3WR7G0rSZRkhFncEphjE68ZZ1yqdZ5UyZXTqzd",
+      }); //if getting errors add this 
 
       try {
         const theList = await Moralis.Cloud.run("getMyList", { addrs: account });
