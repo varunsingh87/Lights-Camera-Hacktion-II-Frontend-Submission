@@ -1,9 +1,9 @@
-export default function Input({name}) {
+export default function Input({name, children}) {
 
     return (
         <div>
             <label>{name}</label>
-            {props.children}
+            {children}
         </div>
     )
 }
