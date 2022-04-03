@@ -26,19 +26,20 @@ const Home = () => {
       await Moralis.start({
         serverUrl: "https://soxcc33tokmi.usemoralis.com:2053/server",
         appId: "Vx3WR7G0rSZRkhFncEphjE68ZZ1yqdZ5UyZXTqzd",
-      }); //if getting errors add this 
+      }); //if getting errors add this
 
       try {
-        const theList = await Moralis.Cloud.run("getMyList", { addrs: account });
+        const theList = await Moralis.Cloud.run("getMyList", {
+          addrs: account,
+        });
 
         const filterdA = movies.filter(function (e) {
           return theList.indexOf(e.Name) > -1;
         });
 
         setMyMovies(filterdA);
-        
       } catch (error) {
-        console.error(error)
+        console.error(error);
       }
     }
 
@@ -117,31 +118,26 @@ const Home = () => {
                 })}
             </div>
           </Tab>
-          <Tab tabKey={2} tabName={"Create a Move"}>
-
-          </Tab>
-          <Tab tabKey={3} tabName={"Movie Fan Art"}>
-            
-          </Tab>
+          <Tab tabKey={2} tabName={"Create a Move"}></Tab>
+          <Tab tabKey={3} tabName={"Movie Fan Art"}></Tab>
           <Tab tabKey={4} tabName={"Watch List"}>
             <div className="ownListContent">
               <div className="title">Your Library</div>
               {myMovies && isAuthenticated ? (
                 <>
                   <div className="ownThumbs">
-                    {
-                      myMovies.map((e) => {
-                        return (
-                          <img
-                            src={e.Thumnbnail}
-                            className="thumbnail"
-                            onClick={() => {
-                              setSelectedFilm(e);
-                              setVisible(true);
-                            }}
-                          ></img>
-                        );
-                      })}
+                    {myMovies.map((e) => {
+                      return (
+                        <img
+                          src={e.Thumnbnail}
+                          className="thumbnail"
+                          onClick={() => {
+                            setSelectedFilm(e);
+                            setVisible(true);
+                          }}
+                        ></img>
+                      );
+                    })}
                   </div>
                 </>
               ) : (
