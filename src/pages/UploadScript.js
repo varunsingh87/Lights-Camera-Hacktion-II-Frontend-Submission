@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom'
+import { useMoralis } from 'react-moralis';
+import { useNavigate } from 'react-router-dom';
 import "./script.css";
-import { useMoralis } from 'react-moralis'
 /**
  * Textboxes for each scene
  * Column 1: Dialogue
@@ -40,61 +40,39 @@ export default function UploadScript(props) {
 
 
     const saveScene = (index, newScript) => {
-        setScene(scenes => {
-            scenes[index] = newScript
-            return scenes
-        });
+        let newScenes = scenes;
+        newScenes[index] = newScript;
+        setScenes(newScenes);
     }
 
     return (
-        <form className="script-form" action="/submit">
+        <form className="script-form">
             <div className="movie-name">
                 <label htmlFor="name">Name</label>
                 <input type="text" size={50} value={name} onChange={e => setName(e.target.value)} />
             </div>
             <div className="sidebar">
-                <button onClick={() => setScene(1)} class="active">Scene 1</button>
-                <button onClick={() => setScene(2)}>Scene 2</button>
-                <button onClick={() => setScene(3)}>Scene 3</button>
+                <button type="button" onClick={() => setScene(1)}>Scene 1</button>
+                <button type="button" onClick={() => setScene(2)}>Scene 2</button>
+                <button type="button" onClick={() => setScene(3)}>Scene 3</button>
             </div>
-            <div>
-                    <label htmlFor="script">Scene</label>
-                    <textarea id="script" style={{ resize: "none" }} cols="30" rows="15" onChange={e => saveScene(currentScene, e.target.textContent)}>{scenes[currentScene]}</textarea>
-                </div>
-                <button onClick={() => {
-                    const scripts: JSON.stringifscenest,
-                        curScene: currentScene,
-                        names)ole.table({
-                        
-                    })
-
-                    navigate('/submit', {
-                        state: name
-                    }/form>')                    saveScript()
-                }}>
-                     Finalize Submsion
-                </button>
-            
+            <div className="script">
+                <label htmlFor="script">Scene</label>
+                <textarea id="script" style={{ resize: "none" }} cols="50" rows="10" onChange={e => saveScene(currentScene, e.target.textContent)}>{scenes[currentScene]}</textarea>
+            </div>
+            <button className="submit" onClick={() => {
+                console.table({
+                    curScene: currentScene,
+                    scenes,
+                    name
+                })
+                navigate('/submit', {
+                    state: name
+                })
+                saveScript()
+            }}>
+                Finish Script Builder
+            </button>
         </form>
-    );
-}  })
-                    saveScript()
-                }}>
-                     Finalize Submsion
-                        state: name
-                    }/form>')                    saveScript()
-                }}>
-                     Finalize Submsion
-                </button>
-            
-        </form>
-    );
-}  })
-                    saveScript()
-                }}>
-                     Finalize Submsion
-                </button>
-            
-        </form>
-    );
+    )
 }

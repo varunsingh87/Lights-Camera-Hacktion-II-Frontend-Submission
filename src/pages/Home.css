@@ -6,11 +6,10 @@
   display: flex;
   justify-content: flex-start;
   padding-top: 20px;
-  margin-left: 250px;
 }
 
 .logo {
-  position: fixed;
+  position: absolute;
   padding: 20px;
   background-color: #161616;
   z-index: 2;
