@@ -14,6 +14,8 @@ import {
 import { movies } from "../helpers/library";
 import { useState } from "react";
 import { useMoralis } from "react-moralis";
+import Upload from "./Upload";
+import UploadScript from "./UploadScript";
 
 const Home = () => {
   const [visible, setVisible] = useState(false);
@@ -118,7 +120,9 @@ const Home = () => {
                 })}
             </div>
           </Tab>
-          <Tab tabKey={2} tabName={"Create a Movie"}></Tab>
+          <Tab tabKey={2} tabName={"Create a Movie"}>
+            <UploadScript />
+          </Tab>
           <Tab tabKey={3} tabName={"Movie Fan Art"}></Tab>
           <Tab tabKey={4} tabName={"Watch List"}>
             <div className="ownListContent">
